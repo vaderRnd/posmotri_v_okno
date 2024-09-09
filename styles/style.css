@@ -9,7 +9,7 @@ html {
 }
 
 .page {
-  padding-bottom: 30px;
+  padding-bottom: 26px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,22 +67,24 @@ a {
 
 .result__video {
   inline-size: 100%;
-  object-fit: contain;
+  block-size: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
 .content__details {
-  padding-bottom: 81px;
+  padding-bottom: 95px;
   width: 399px;
 }
 
 .content__list {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
   height: 298px;
   overflow: auto;
-  scrollbar-width: none;
+  overflow-x: clip;
 }
 
 .content__video-card {
@@ -91,9 +93,14 @@ a {
   align-items: flex-start;
 }
 
+.content__card-link {
+  display: block;
+}
+
 .content__card-link:active {
   display: inline-block;
   background: #545050;
+  text-decoration: none;
 }
 
 .content__card-link:hover {
@@ -128,6 +135,7 @@ a {
 }
 
 .search-form__fieldset-title {
+  padding-bottom: 5px;
   color: #fff;
   font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -179,6 +187,14 @@ a {
   background-color: transparent;
   border: solid #fff 1px;
   cursor: pointer;
+  color: #fff;
+  text-align: center;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  min-height: 34px;
 }
 
 .button:focus {
@@ -200,7 +216,7 @@ a {
   outline-offset: 1px;
 }
 
-.search-form__submit-button,
+/* .search-form__submit-button,
 .more-button {
   color: #fff;
   text-align: center;
@@ -210,11 +226,10 @@ a {
   font-weight: 700;
   line-height: normal;
   min-height: 34px;
-}
+} */
 
 .search-form__submit-button {
   width: 194px;
-
 }
 
 .more-button {
@@ -259,14 +274,9 @@ a {
   cursor: pointer;
 }
 
-.search-form__label:has(.search-form__checkbox:focus-visible){
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 
@@ -284,10 +294,6 @@ a {
   width: 15px;
   height: 15px;
   background-color: #fff;
-}
-
-.content__list {
-  position: relative;
 }
 
 .content__video-card-title {
@@ -311,8 +317,4 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: 16.2px;
-}
-
-.content__video-card:active {
-  text-decoration: none;
 }
